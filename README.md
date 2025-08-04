@@ -27,14 +27,23 @@ A full-stack web application for managing fundraising interns with dashboard, le
 
 
 FundRaisingPortal/
+
 ├── frontend/
+
 │   ├── index.html          # Login/Signup page
+
 │   ├── dashboard.html      # Main dashboard
+
 │   ├── style.css          # All styling
+
 │   └── script.js          # Frontend JavaScript
+
 ├── backend/
+
 │   ├── index.js           # Express server
+
 │   └── package.json       # Dependencies
+
 └── README.md             # This file
 
 
