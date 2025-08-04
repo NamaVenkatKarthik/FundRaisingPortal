@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising Intern Portal - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        
+        <div class="dashboard">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1 class="welcome-text">Welcome, <span class="intern-name" id="internName">Loading...</span>!</h1>
+                <p class="subtitle">Your Fundraising Dashboard</p>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showTab('overview')">Overview</button>
+                <button class="nav-tab" onclick="showTab('leaderboard')">Leaderboard</button>
+            </div>
+            
+            <!-- Overview Tab -->
+            <div class="tab-content" id="overviewTab">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalDonations">₹0</div>
+                        <div class="stat-label">Total Donations Raised</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalReferrals">0</div>
+                        <div class="stat-label">Total Referrals</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="currentRank">#-</div>
+                        <div class="stat-label">Current Rank</div>
+                    </div>
+                </div>
+                
+                <!-- Referral Code Section -->
+                <div class="section">
+                    <h3 class="section-title">Your Referral Code</h3>
+                    <div class="referral-code">
+                        <div class="code-text" id="referralCode">Loading...</div>
+                        <button class="copy-btn" onclick="copyReferralCode()">Copy Code</button>
+                        <p class="referral-info">Share this code to earn rewards!</p>
+                    </div>
+                </div>
+                
+                <!-- Rewards Section -->
+                <div class="section">
+                    <h3 class="section-title">Rewards & Achievements</h3>
+                    <div class="rewards-grid">
+                        <div class="reward-item" id="reward1">
+                            <div class="reward-icon">🥉</div>
+                            <div class="reward-title">Bronze Badge</div>
+                            <div class="reward-target">Raise ₹1,000</div>
+                            <div class="reward-status">Locked</div>
+                        </div>
+                        <div class="reward-item" id="reward2">
+                            <div class="reward-icon">🥈</div>
+                            <div class="reward-title">Silver Badge</div>
+                            <div class="reward-target">Raise ₹5,000</div>
+                            <div class="reward-status">Locked</div>
+                        </div>
+                        <div class="reward-item" id="reward3">
+                            <div class="reward-icon">🥇</div>
+                            <div class="reward-title">Gold Badge</div>
+                            <div class="reward-target">Raise ₹10,000</div>
+                            <div class="reward-status">Locked</div>
+                        </div>
+                        <div class="reward-item" id="reward4">
+                            <div class="reward-icon">👑</div>
+                            <div class="reward-title">Top Performer</div>
+                            <div class="reward-target">Raise ₹25,000</div>
+                            <div class="reward-status">Locked</div>
+                        </div>
+                        <div class="reward-item" id="reward5">
+                            <div class="reward-icon">🎯</div>
+                            <div class="reward-title">Referral Master</div>
+                            <div class="reward-target">10+ Referrals</div>
+                            <div class="reward-status">Locked</div>
+                        </div>
+                        <div class="reward-item" id="reward6">
+                            <div class="reward-icon">🚀</div>
+                            <div class="reward-title">Rising Star</div>
+                            <div class="reward-target">Top 10 Leaderboard</div>
+                            <div class="reward-status">Locked</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leaderboard Tab -->
+            <div class="tab-content hidden" id="leaderboardTab">
+                <div class="section">
+                    <h3 class="section-title">Top Performers</h3>
+                    <div class="leaderboard-list" id="leaderboardList">
+                        <!-- Leaderboard items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDashboard();
+        });
+    </script>
+</body>
+</html>
